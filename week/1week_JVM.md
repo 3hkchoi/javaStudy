@@ -25,7 +25,9 @@
   - 가비지 컬렉션(garbage collection) <br>
       : 클래스 인스턴스는 사용자 코드에 의해 명시적으로 생성되고 가비지 컬렉션에 의해 자동으로 파괴된다.
   - https://d2.naver.com/helloworld/1230 
-  - 
+
+
+#### 1-3.
                
 
 
