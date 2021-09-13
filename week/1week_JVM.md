@@ -28,10 +28,11 @@
      - OS가 클래스파일(ByteCode)을 이해할 수 있도록 해석해 줌.
      - Byte코드는 JVM위에서 OS상관없이 실행
     
+    
   ### JVM 의 구성
-  
-  
+![image](https://user-images.githubusercontent.com/89792058/133065826-dbbd6d2b-2dcd-4adf-9521-d1d0104fe49e.png)
 
+  
   ### 특징    
      * 스택 기반의 가상 머신
      * 심볼릭 레퍼런스 <br> 
@@ -40,7 +41,7 @@
       : 클래스 인스턴스는 사용자 코드에 의해 명시적으로 생성되고 가비지 컬렉션에 의해 자동으로 파괴된다.
      * https://d2.naver.com/helloworld/1230 
 
-  ### 3.
+
  
                
 
