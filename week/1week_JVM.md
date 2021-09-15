@@ -22,10 +22,15 @@
     Java Byte Code를 OS에 맞게 해석해주는 역할을 하는 가상머신     
   
    - Java Compiler 
+   
      - .java파일을 클래스파일(.class형식. Java byte code)로 변환
+     
      - byte 코드는 기계어가 아니기 때문에 OS에서 바로 실행이 안됨
+     
    - JVM
+   
      - OS가 클래스파일(ByteCode)을 이해할 수 있도록 해석해 줌.
+     
      - Byte코드는 JVM위에서 OS상관없이 실행
  
  </br>
@@ -57,7 +62,7 @@
          - 메서드와 변수
       - 로딩이 끝나면 해당 클래스 타입의 Class 객체를 생성하여 “힙” 영역에 저장
 
-    
+ 
    - 링크
     
      - 레퍼런스를 연결하는 과정
