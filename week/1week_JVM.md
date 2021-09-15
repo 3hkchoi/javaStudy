@@ -27,7 +27,8 @@
    - JVM
      - OS가 클래스파일(ByteCode)을 이해할 수 있도록 해석해 줌.
      - Byte코드는 JVM위에서 OS상관없이 실행
-    
+ 
+ </br>
     
   ## JVM 의 구성
 ![image](https://user-images.githubusercontent.com/89792058/133065826-dbbd6d2b-2dcd-4adf-9521-d1d0104fe49e.png)
@@ -36,29 +37,54 @@
    - Execution Engine
 
 
-
+</br>
 
  
   <img src="https://user-images.githubusercontent.com/89792058/133447500-eac96015-0c47-4cda-9ce9-4e57a05d6c63.png" width="400" height="400" align="right">
   
    ## Class Loader
-    로딩, 링크, 초기화 순으로 진행된다.          
     Runtime 시점에 .class에서 바이트코드를 읽고 메모리에 저장
+    로딩, 링크, 초기화 순으로 진행된다.
   
    - 로딩
    
-     - 클래스를 읽어오는 과정
+     - 클래스 로더가 .class 파일을 읽고 그 내용에 따라 적절한 바이너리 데이터를 만들고 “메소드” 영역에 저장
+     
+     - 메소드 영역에 저장하는 데이터
+     
+         - FQCN(Fully Qualified Class Name)
+         - 클래스, 인터페이스
+         - 메서드와 변수
+      - 로딩이 끝나면 해당 클래스 타입의 Class 객체를 생성하여 “힙” 영역에 저장
+
     
    - 링크
     
      - 레퍼런스를 연결하는 과정
      
+     - Verify, Prepare, Resolve(Optional) 세 단계
+       
+        - 검증: .class 파일 형식이 유효한지 체크한다.
+        - Preparation: 클래스 변수(static 변수)의 기본값에 따라 필요한 메모리
+        - Resolve: 심볼릭 메모리 레퍼런스를 메서드 영역에 있는 실제 레퍼런스로 교체한다.
+     
      
    - 초기화
     
-     - static 값들을 초기화 및 변수에 할당
+     - static 변수의 값 할당. (static 블럭이 있다면 이때 실행)
+   
   
+    클래스 로더는 계층 구조로 이뤄져 있으면 기본적으로 세가지 클래스 로더가 제공된다
+    
+     - 부트 스트랩: 
+        JAVA_HOME/lib에 있는 코어 자바 API를 제공한다. 최상위 우선순위를 가진 클래스 로더
+     - 플랫폼: 
+        JAVA_HOME/lib/ext 폴더 또는 java.ext.dirs 시스템 변수에 해당하는 위치에 있는 클래스를 읽는다.
+     - 애플리케이션: 
+        앱 ClassPath(앱을 실행 할 때 주는 -classpath 옵션 또는 java.class.path 환경변수의 값에 해당하는 위치)에서 클래스를 읽는다
+   
   
+ </br>
  
    ## Runtime Data Areas
     Heap 과 Method는 모든 쓰레드가 공유. 나머지는 쓰레드 마다 생성.         
@@ -83,18 +109,25 @@
         -  Heap의 경우 명시적으로 만든 class와 암묵적인 static 클래스(.class 파일의 class)가 담긴다.
         -  암묵적인 static 클래스의 경우 클래스 로딩 시 class 타입의 인스턴스를 만들어 힙에 저장한다. ( => Reflection에 등장.)
   
-
-    
-    
-    
-
+ </br>
       
      
-   ## Execution Engine
-     - Load된 Class의 ByteCode를 실행하는 Runtime Module
-     - Class Loader를 통해 JVM 내의 Runtime Data Areas에 배치된 바이트 코드는 Execution Engine에 의해 실행(바이트 코드를 명령어 단위로 읽어서 실행)
+   ## Execution Engine        
+    Load된 Class의 ByteCode를 실행하는 Runtime Module
+    Class Loader를 통해 JVM 내의 Runtime Data Areas에 배치된 바이트 코드는 Execution Engine에 의해 실행
+    (바이트 코드를 명령어 단위로 읽어서 실행)
   
+  </br>
   
+   ## Java Compiler       
+    바이트 코드를 JVM 해석없이 바로 수행되는 기계어 코드를 만들어 낸다
+    
+  > ### 과정
+ 1. Java Compiler(javac 명령어 실행)에 의해 Java Source(.java 확장자)로부터 Byte Code(.class 확장자)가 생성된다.
+ 2. JVM에 있는 Class Loader에 의해 Byte Code는 JVM내로 로드되고 실행엔진에 의해 기계어로 해석되어 메모리 상(Runtime Data Area)에 배치된다.
+ 3. 실행엔진에는 Interpreter와 JIT(Just-In-Time) Compiler가 있는데, Interpreter에 의해 Byte Code를 한 줄씩 읽어 실행하다가 적절한 시점에 Byte Code 전체를 컴파일하고 더이상 인터프리팅하지 않고 해당 코드를 직접 실행한다.
+  
+  </br>
   
   
   
