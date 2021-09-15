@@ -31,31 +31,66 @@
     
   ## JVM 의 구성
 ![image](https://user-images.githubusercontent.com/89792058/133065826-dbbd6d2b-2dcd-4adf-9521-d1d0104fe49e.png)
-
    - Class Loader
-     - Runtime 시점에 .class에서 바이트코드를 읽고 메모리에 저장
-     - 로딩: 클래스를 읽어오는 과정
-     - 링크: 레퍼런스를 연결하는 과정
-     - 초기화: static 값들을 초기화 및 변수에 할당
-    
    - Runtime Data Areas
-     - Heap 과 Method는 모든 쓰레드가 공유. 나머지는 쓰레드 마다 생성.
-     - JVM이 프로그램을 수행하기 위해 OS로부터 별도로 할당받은 메모리 공간.
-         
-           - PC Register: 
-               CPU가 Instruction을 수행하는 동한 필요한 정보를 저장
-           - JVM Stack: 
-               Thread가 시작될 때 생성되며 Method와 Method 정보 저장
-           - Navtive Method Stack: 
-               Java 이외의 언어로 작성된 native 코드를 위한 Stack(JNI)
-           - Method Area: 
-               모든 쓰레드가 공유하는 메모리 영역(클래스, 인터페이스, 메소드, 필드, Static 변수등의 바이트 코드 등을 보관) 
-           - Heap: 
-               런타임시 동적으로 할당하여 사용하는 영역 class를 통해 instance를 생성하면 Heap에 저장됨
-                  - Heap의 경우 명시적으로 만든 class와 암묵적인 static 클래스(.class 파일의 class)가 담긴다.
-                  - 암묵적인 static 클래스의 경우 클래스 로딩 시 class 타입의 인스턴스를 만들어 힙에 저장한다. ( => Reflection에 등장.)
-         
    - Execution Engine
+
+
+
+
+ 
+  <img src="https://user-images.githubusercontent.com/89792058/133447500-eac96015-0c47-4cda-9ce9-4e57a05d6c63.png" width="400" height="400" align="right">
+  
+   ## Class Loader
+    로딩, 링크, 초기화 순으로 진행된다.          
+    Runtime 시점에 .class에서 바이트코드를 읽고 메모리에 저장
+  
+   - 로딩
+   
+     - 클래스를 읽어오는 과정
+    
+   - 링크
+    
+     - 레퍼런스를 연결하는 과정
+     
+     
+   - 초기화
+    
+     - static 값들을 초기화 및 변수에 할당
+  
+  
+ 
+   ## Runtime Data Areas
+    Heap 과 Method는 모든 쓰레드가 공유. 나머지는 쓰레드 마다 생성.         
+    JVM이 프로그램을 수행하기 위해 OS로부터 별도로 할당받은 메모리 공간.
+  
+   - PC Register:
+     - CPU가 Instruction을 수행하는 동한 필요한 정보를 저장
+    
+   - JVM Stack: 
+     - Thread가 시작될 때 생성되며 Method와 Method 정보 저장
+  
+   - Navtive Method Stack: 
+     - Java 이외의 언어로 작성된 native 코드를 위한 Stack(JNI)
+   
+   - Method Area: 
+     - 모든 쓰레드가 공유하는 메모리 영역(클래스, 인터페이스, 메소드, 필드, Static 변수등의 바이트 코드 등을 보관)  
+
+
+   - Heap:
+     - 런타임시 동적으로 할당하여 사용하는 영역 class를 통해 instance를 생성하면 Heap에 저장됨
+   
+        -  Heap의 경우 명시적으로 만든 class와 암묵적인 static 클래스(.class 파일의 class)가 담긴다.
+        -  암묵적인 static 클래스의 경우 클래스 로딩 시 class 타입의 인스턴스를 만들어 힙에 저장한다. ( => Reflection에 등장.)
+  
+
+    
+    
+    
+
+      
+     
+   ## Execution Engine
      - Load된 Class의 ByteCode를 실행하는 Runtime Module
      - Class Loader를 통해 JVM 내의 Runtime Data Areas에 배치된 바이트 코드는 Execution Engine에 의해 실행(바이트 코드를 명령어 단위로 읽어서 실행)
   
