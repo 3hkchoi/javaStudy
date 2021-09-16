@@ -32,10 +32,41 @@
      - OS가 클래스파일(ByteCode)을 이해할 수 있도록 해석해 줌.
      
      - Byte코드는 JVM위에서 OS상관없이 실행
+
+
+</br>
+
+# 2. 컴파일 하는 방법
+  ## cmd에서 실행하기
+ ```
+ javac fileName.java  (컴파일 .class 파일 생성)
  
- </br>
-    
-  ## JVM 의 구성
+ java fileName        (.class 파일 실행)
+ ```
+ 
+   ## 자바 컴파일 과정
+   
+   
+
+</br>
+
+# 3. 실행하는 방법
+
+
+
+</br>
+
+# 4. 바이트코드란 무엇인가
+
+
+</br>
+
+# 5. JIT 컴파일러란 무엇이며 어떻게 동작하는지
+
+
+</br>
+
+# 6.JVM의 구성 요소
 ![image](https://user-images.githubusercontent.com/89792058/133065826-dbbd6d2b-2dcd-4adf-9521-d1d0104fe49e.png)
    - Class Loader
    - Runtime Data Areas
