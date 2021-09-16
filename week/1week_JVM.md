@@ -40,10 +40,9 @@
 
 # 2. 컴파일 하는 방법
 
-  ## cmd에서 컴파일하기
+ > ### cmd에서 컴파일하기
  ```
- javac fileName.java  (컴파일 .class 파일 생성)
- 
+ javac fileName.java  (컴파일 .class 파일 생성) 
  ```
  
  ![image](https://user-images.githubusercontent.com/89792058/133625955-96143856-9cab-4768-a2b2-a5231d07c41a.png)
@@ -60,7 +59,7 @@
  내부적으로는 Compile  =>  ClassLoader ( Byte Code Verifier - 바이트코드 변조 확인 ) => Execution Engine에서 실행되는 구조
 ```
 
-  ## cmd에서 실행하기
+>  ### cmd에서 실행하기
  ``` 
  java fileName    (.class 파일 실행)
  ```
