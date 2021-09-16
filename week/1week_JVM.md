@@ -37,31 +37,67 @@
 </br>
 
 # 2. 컴파일 하는 방법
-  ## cmd에서 실행하기
+
+  ## cmd에서 컴파일하기
  ```
  javac fileName.java  (컴파일 .class 파일 생성)
  
- java fileName        (.class 파일 실행)
  ```
+ 
+ ![image](https://user-images.githubusercontent.com/89792058/133625955-96143856-9cab-4768-a2b2-a5231d07c41a.png)
  
    ## 자바 컴파일 과정
    
-   
+   - java 파일 작성 후 build라는 작업을통해 .class 파일을 생성한다 (컴퓨터가 읽을 수 없는 자바 바이트코드(반기계어) 임)
+
 
 </br>
 
 # 3. 실행하는 방법
+```  
+ 내부적으로는 Compile  =>  ClassLoader ( Byte Code Verifier - 바이트코드 변조 확인 ) => Execution Engine에서 실행되는 구조
+```
 
+  ## cmd에서 실행하기
+ ``` 
+ java fileName    (.class 파일 실행)
+ ```
 
+  ## 실행 과정
+   - 자바 바이트 코드 (.class)는 클래스 로더에 의해서 JVM 내로 로드되고, 실행 엔진에 의해 기계어로 해석되어 메모리 상(Runtime Data Area)에 배치됨.
+      - 실행엔진에는 Interpreter와 JIT(Just-In-Time) Compiler가 있다. 
+      - Interpreter는 바이트 코드를 한줄씩 읽기 때문에 실행이 느리며, 이를 보완하기 위해 나온 것이 JIT Compiler.
 
 </br>
 
 # 4. 바이트코드란 무엇인가
-
+ ``` 
+JVM이 이해할 수 있는 언어로 변환된 자바 소스 코드. 
+자바 컴파일러로 변환되는 코드의 명령어 크기가 1바이트라서 바이트코드라고 불린다고 한다.
+ ``` 
 
 </br>
 
 # 5. JIT 컴파일러란 무엇이며 어떻게 동작하는지
+
+https://gblee1987.tistory.com/173
+  
+  ## JIT 컴파일러
+  
+  
+</br>
+  
+  ## JIT 컴파일러   vs   Interpreter
+ ```  
+ 인터프리터 방식으로 실행하다가 적절한 시점에 바이트 코드 전체를 컴파일 하고 더이상 인터프리팅 하지 않고 해당 코드를 직접 실행하는 것이다. 
+ JIT Compiler에 의해 해석된 코드는 캐시에 보관하기 때문에 한 번 컴파일 된 후에는 빠르게 수행하는 장점이 있다.
+ 하지만 인터프리팅 방식보다는 훨씬 오래 걸리므로 한번만 실행하면 되는 코드는 인터프리팅하는것이 유리하다.
+ ```
+   - interpreter
+    - 자바 바이트 코드를 한줄 씩 실행, 여러번 실행하는 환경에서는 다소 느림
+     
+   - JIT Compiler
+    - Interpreter의 단점을 보완, 전체 바이트 코드를 컴파일, 캐시 사용으로 한번 컴파일하면 다음에는 빠르게 수행
 
 
 </br>
