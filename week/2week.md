@@ -108,11 +108,48 @@ MAX_SPEED = 20;   //error! 상수의 값 변경
 </br>
 
  ## 리터럴(literal)
- 값 그 자체
+   - 값 그 자체
  
 ```java
 int year = 2021;  //2021: 리터럴
   //year : 변수
 final int MAX_SPEED = 10; //10: 리터럴
         //MAX_SPEED : 
-```  
+```
+
+</br>
+
+ ## 리터럴(literal)의 타입과 접미사
+   - 정수형 
+
+        - long타입의 리터럴 : long + 접미사 'l' 또는 'L'
+         
+        - 접미사가 없으면 int타입의 리터럴 (int 정수형의 기본자료형)
+         
+        - 16진수 : 0x로 시작
+        - 2진수 : 0b로 시작
+        
+   - 실수형
+    
+        - float타입의 리터럴 : float + 접미사 'f' 또는 'F'
+       
+        - double타입의 리터럴 : double + 접미사 'd' 또는 'D'
+       
+        - 접미사가 없으면 double타입의 리터럴 (double이 실수형의 기본자료형)
+
+
+```java
+long big = 10000000L; 
+
+float pi = 3.14f; //3.14F
+double rate = 1.618d; //1.618D
+
+float pi = 3.14;     //error! float타입에 double타입 리터럴 저장불가
+double rate = 1.618; //ok! 접미사 d 생략가능
+```
+
+</br>
+
+> #### 리터럴에 소수점이나 10의 제곱을 나타내는 기호 E 또는 e, 접미사 f, F, d, D를 포함하고 있으면 실수형 리터럴로 간주된다.
+       
+    
