@@ -19,5 +19,24 @@
 <br>
 <br>
 
+# 1. 프리미티브 타입 종류와 값의 범위 그리고 기본 값
+  ## Primitive type
+    기본자료형 혹은 원시자료형
+    값을 할당할 때 변수의 주소값에 그대로 저장됨.
+    값 할당시 JVM Runtime Data Area 영역 중 Stack 영역에 값이 저장됨.
+    
+   - Java Compiler 
+   
+     - .java파일을 클래스파일(.class형식. Java byte code)로 변환
+     
+     - byte 코드는 기계어가 아니기 때문에 OS에서 바로 실행이 안됨
+     
+   - JVM
+   
+     - OS가 클래스파일(ByteCode)을 이해할 수 있도록 해석해 줌.
+     
+     - Byte코드는 JVM위에서 OS상관없이 실행
 
+
+</br>
 
