@@ -90,3 +90,29 @@ Date today = new Date(); //Date객체를 생성해서 그 주소를 today에 저
 ```
    - 참조형 변수는 NULL 또는 객체의 주소(JVM 32bit : 4 byte / 64bit : 8byte) 를 값으로 갖는다. 
    - NULL은 어떤 객체의 주소도 저장되어 있지 않음을 뜻함.
+
+</br>
+
+# 3. 리터럴(literal)
+> #### 상수(constant)
+```java
+final int MAX_SPEED = 10; //상수 MAX_SPEED 선언 & 초기화
+```
+   - 상수는 반드시 선언과 동시에 초기화 필수.
+   
+   - 이후 수의 값을 변경하는 것이 허용되지 않음.
+```java
+final int MAX_SPEED; //error! 상수는 선언과 동시에 초기화해야함
+MAX_SPEED = 20;   //error! 상수의 값 변경 
+```  
+</br>
+
+ ## 리터럴(literal)
+ 값 그 자체
+ 
+```java
+int year = 2021;  //2021: 리터럴
+  //year : 변수
+final int MAX_SPEED = 10; //10: 리터럴
+        //MAX_SPEED : 
+```  
