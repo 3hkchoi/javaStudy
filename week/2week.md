@@ -292,7 +292,9 @@ class Card{
 
 ```java
 class Test{
+
    public static void main(String args[]) {
+   
       // 클래스변수
       System.out.println("클래스변수" + Card.width);  // 클래스변수는 객체생성없이 바로 사용.
       System.out.println("클래스변수" + Card.height); // '클래스이름.클래스변수' 의 형태
